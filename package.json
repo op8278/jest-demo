@@ -1,0 +1,52 @@
+{
+  "name": "jest-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/op8278/jest-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/op8278/jest-demo/issues"
+  },
+  "homepage": "https://github.com/op8278/jest-demo#readme",
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testRegex": "/test/.*\\.(test|spec)\\.(js)$",
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 95,
+        "lines": 95,
+        "statements": 95
+      }
+    },
+    "collectCoverageFrom": [
+      "src/*.{js}",
+      "src/**/*.{js}"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/boot.js"
+    ]
+  },
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
+}
