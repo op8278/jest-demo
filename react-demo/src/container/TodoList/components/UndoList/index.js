@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 
 class UndoList extends Component {
   render() {
-    const { list, deleteItem, changeStatus, handleBlur, valueChange } = this.props
+    const {
+      list = [],
+      deleteItem = () => {},
+      changeStatus = () => {},
+      handleBlur = () => {},
+      valueChange = () => {},
+    } = this.props
     return (
       <div className="undo-list">
         <div className="undo-list-title">
