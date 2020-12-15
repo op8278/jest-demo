@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UndoList 初始化 快照,无 list 数组 1`] = `
+exports[`UndoList 单元测试 初始化 快照,无 list 数组 1`] = `
 <div
   className="undo-list"
 >
@@ -21,7 +21,7 @@ exports[`UndoList 初始化 快照,无 list 数组 1`] = `
 </div>
 `;
 
-exports[`UndoList 初始化 快照,有 list 数组 1`] = `
+exports[`UndoList 单元测试 初始化 快照,有 list 数组 1`] = `
 <div
   className="undo-list"
 >
@@ -73,7 +73,7 @@ exports[`UndoList 初始化 快照,有 list 数组 1`] = `
 </div>
 `;
 
-exports[`UndoList 初始化 快照,有 list 数组并含有 input 框 1`] = `
+exports[`UndoList 单元测试 初始化 快照,有 list 数组并含有 input 框 1`] = `
 <div
   className="undo-list"
 >

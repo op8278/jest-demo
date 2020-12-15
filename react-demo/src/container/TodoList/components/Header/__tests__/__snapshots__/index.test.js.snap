@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header 初始化 快照 1`] = `
+exports[`Header 单元测试 初始化 快照 1`] = `
 <div
   className="header"
 >

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import UndoList from '../index'
 import { findTestWrapper } from '../../../../../utils'
 
-describe('UndoList', () => {
+describe('UndoList 单元测试', () => {
   describe('初始化', () => {
     test('快照,无 list 数组', () => {
       const wrapper = shallow(<UndoList />)

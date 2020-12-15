@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TodoList 初始化 快照, undoList 数组 为空 1`] = `
+exports[`TodoList 单元测试 初始化 快照, undoList 数组 为空 1`] = `
 <TodoList>
   <div>
     <Header
@@ -54,7 +54,7 @@ exports[`TodoList 初始化 快照, undoList 数组 为空 1`] = `
 </TodoList>
 `;
 
-exports[`TodoList 初始化 快照, undoList 数组有值,且不含 input 1`] = `
+exports[`TodoList 单元测试 初始化 快照, undoList 数组有值,且不含 input 1`] = `
 <TodoList>
   <div>
     <Header
@@ -150,7 +150,7 @@ exports[`TodoList 初始化 快照, undoList 数组有值,且不含 input 1`] = 
 </TodoList>
 `;
 
-exports[`TodoList 初始化 快照, undoList 数组有值,且含 input 1`] = `
+exports[`TodoList 单元测试 初始化 快照, undoList 数组有值,且含 input 1`] = `
 <TodoList>
   <div>
     <Header

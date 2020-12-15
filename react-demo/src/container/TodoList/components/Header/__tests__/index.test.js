@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import Header from '../index'
 import { findTestWrapper } from '../../../../../utils'
 
-describe('Header', () => {
+describe('Header 单元测试', () => {
   describe('初始化', () => {
     test('快照', () => {
       const wrapper = shallow(<Header />)
