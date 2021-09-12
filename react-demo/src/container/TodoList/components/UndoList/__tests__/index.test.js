@@ -68,7 +68,9 @@ describe('UndoList 单元测试', () => {
       const wrapper = shallow(<UndoList list={listData} deleteItem={fn} />)
       const deleteItem = findTestWrapper(wrapper, 'delete-item')
 
-      deleteItem.at(1).simulate('click')
+      deleteItem.at(1).simulate('click', {
+        stopPropagation: () => {},
+      })
 
       expect(fn).toHaveBeenCalledTimes(1)
       expect(fn).toHaveBeenCalledWith(1)
