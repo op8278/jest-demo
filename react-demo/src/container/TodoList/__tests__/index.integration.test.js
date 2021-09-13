@@ -1,8 +1,10 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import { Provider } from 'react-redux'
 
 import TodoList from '../index'
 import { findTestWrapper } from '../../../utils'
+import store from '../../../store/createStore'
 
 describe('TodoList 集成测试', () => {
   // eslint-disable-next-line jest/valid-title
@@ -11,7 +13,11 @@ describe('TodoList 集成测试', () => {
   2.用户会点击回车按钮
   3.列表应该增加用户输入内容的列表项
 `, () => {
-    const wrapper = mount(<TodoList />)
+    const wrapper = mount(
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
+    )
     const inputElem = findTestWrapper(wrapper, 'input')
     const value = 'shu qin'
 
@@ -33,7 +39,11 @@ describe('TodoList 集成测试', () => {
   2.用户会点击回车按钮
   3.列表不应该增加用户输入内容的列表项
 `, () => {
-    const wrapper = mount(<TodoList />)
+    const wrapper = mount(
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
+    )
     const inputElem = findTestWrapper(wrapper, 'input')
     const value = ''
 
