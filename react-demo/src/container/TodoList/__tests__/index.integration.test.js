@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import TodoList from '../index'
 import { findTestWrapper } from '../../../utils'
 import store from '../../../store/createStore'
+import axios from 'axios'
 
 describe('TodoList 集成测试', () => {
   // eslint-disable-next-line jest/valid-title
@@ -56,5 +57,82 @@ describe('TodoList 集成测试', () => {
 
     const listItems = findTestWrapper(wrapper, 'list-item')
     expect(listItems.length).toBe(0)
+  })
+
+  // 1. axios
+  // eslint-disable-next-line jest/valid-title
+  //   test(`
+  //   1.用户打开界面
+  //   2.应该展示接口返回的数据
+  // `, (done) => {
+  //     const wrapper = mount(
+  //       <Provider store={store}>
+  //         <TodoList />
+  //       </Provider>
+  //     )
+  //     process.nextTick(() => {
+  //       wrapper.update()
+  //       const listItem = findTestWrapper(wrapper, 'list-item')
+  //       expect(listItem.length).toBe(1)
+  //       expect(listItem.text()).toContain('learn jest')
+  //       done()
+  //     })
+  //   })
+
+  // 2. axios + setTimeout
+  // eslint-disable-next-line jest/valid-title
+  test(`
+  1.用户打开界面
+  2.等待4s
+  3.应该展示接口返回的数据
+`, (done) => {
+    jest.useFakeTimers()
+
+    // axios.get.mock
+    const wrapper = mount(
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
+    )
+
+    jest.runAllTimers()
+
+    process.nextTick(() => {
+      wrapper.update()
+      const listItem = findTestWrapper(wrapper, 'list-item')
+      expect(listItem.length).toBe(1)
+      expect(listItem.text()).toContain('learn jest')
+      done()
+    })
+
+    jest.useRealTimers()
+  })
+
+  // eslint-disable-next-line jest/valid-title
+  test(`
+  1.用户打开界面
+  2.等待4s
+  3.接口错误
+  4.不渲染数据
+`, (done) => {
+    axios.setIsSuccess(false)
+    jest.useFakeTimers()
+
+    const wrapper = mount(
+      <Provider store={store}>
+        <TodoList />
+      </Provider>
+    )
+
+    jest.runAllTimers()
+
+    process.nextTick(() => {
+      wrapper.update()
+      const listItem = findTestWrapper(wrapper, 'list-item')
+      expect(listItem.length).toBe(0)
+      done()
+    })
+    jest.useRealTimers()
+    axios.setIsSuccess(true)
   })
 })
